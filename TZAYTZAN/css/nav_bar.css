@@ -1,24 +1,24 @@
 #navBar{
     display: flex;
     flex-direction: column;
-    min-width: 250px;
+    min-width: 15em;
 }
 
 .nav-item {
-    height: 24px;
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: bold;
+    height: 1em;
     color: black;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
     text-decoration: none;
-    border-radius: 14px;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    border-radius: 0.6em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.08px;
+    padding-bottom: 0.08px;
     align-items: center;
-    line-height: 28px;
+    line-height: 0.17em;
     text-align:center;
     width: fit-content;
 }
@@ -28,8 +28,8 @@
 }
 
 .nav-icon {
-    height: 24px;
-    width: 24px;
+    height: 1em;
+    width: 1em;
     
 }
 .svg.nav-icon:hover{
@@ -42,21 +42,22 @@
 }
 
 #twIcon {
-    height: 24px;
-    width: 24px;
+    height: 1.5em;
+    width: 1.5em;
     /* fill: cornflowerblue; */
     filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
 }
 .twit-btn {
-    height: 50px;
-    width: 200px;
+    font-size: 1.125em;
+    text-align:center;
+    line-height: 2.8em;
+    align-items: center;
+    height: 2.8em;
+    width: 11em;
     background-color: cornflowerblue;
     color: white;
-    border-radius: 25px;
-    font-size: 18px;
-    text-align:center;
-    line-height: 50px;
-    align-items: center;
+    border-radius: 1.4em;
+    
 }
 .twit-btn:hover{
     cursor: pointer;

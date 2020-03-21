@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     background-color: lightgray;
-    max-width: 600px;
+    max-width: 40em;
 }
 
 .feed-item {
@@ -10,7 +10,7 @@
     flex-direction: row;
     background-color: white;
     margin: 1px;
-    padding: 10px;
+    padding: 0.6em;
     justify-content: space-evenly;
 }
 
@@ -19,7 +19,7 @@
     width: 1.8em;
     border-radius: 50%;
     border: royalblue;
-    margin: 10px;
+    margin: 0.6em;
 }
 
 .tweet-item {
@@ -27,7 +27,7 @@
 }
 
 .tweet-inner-item{
-    margin: 10px;
+    margin: 0.6em;
 }
 
 .tweet-image {
@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 10px;
+    margin: 0.6em;
     
 }
 
@@ -49,7 +49,7 @@
 }
 
 .tweet-action-icon-contrainer{
-    padding: 10px;
+    padding: 0.6em;
 }
 
 .tweet-action-icon-contrainer:hover{
