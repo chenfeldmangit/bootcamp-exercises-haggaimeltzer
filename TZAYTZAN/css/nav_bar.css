@@ -1,0 +1,68 @@
+#navBar{
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+}
+
+.nav-item {
+    height: 24px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border-radius: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    align-items: center;
+    line-height: 28px;
+    text-align:center;
+    width: fit-content;
+}
+
+.nav-item:hover{
+    background-color: rgb(224, 235, 255);
+}
+
+.nav-icon {
+    height: 24px;
+    width: 24px;
+    
+}
+.svg.nav-icon:hover{
+    /* fill: cornflowerblue;             */
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
+}
+.nav-item:hover .svg.nav-icon{
+    /* fill: cornflowerblue;             */
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
+}
+
+#twIcon {
+    height: 24px;
+    width: 24px;
+    /* fill: cornflowerblue; */
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
+}
+.twit-btn {
+    height: 50px;
+    width: 200px;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 25px;
+    font-size: 18px;
+    text-align:center;
+    line-height: 50px;
+    align-items: center;
+}
+.twit-btn:hover{
+    cursor: pointer;
+    background-color: royalblue;
+}
+.avatar{
+    border-radius: 50%;
+    border: royalblue;
+}

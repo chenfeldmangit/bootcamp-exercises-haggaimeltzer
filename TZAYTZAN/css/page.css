@@ -1,0 +1,8 @@
+.body{
+    font-size: 20px;
+}
+
+.main-layout{
+    display: flex;
+    flex-direction: row;
+}

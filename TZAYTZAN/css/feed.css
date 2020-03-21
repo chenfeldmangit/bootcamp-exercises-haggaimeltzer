@@ -1,0 +1,64 @@
+.feed {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    max-width: 600px;
+}
+
+.feed-item {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin: 1px;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+.feed-profile-img {
+    height: 1.8em;
+    width: 1.8em;
+    border-radius: 50%;
+    border: royalblue;
+    margin: 10px;
+}
+
+.tweet-item {
+    
+}
+
+.tweet-inner-item{
+    margin: 10px;
+}
+
+.tweet-image {
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+}
+
+.tweet-actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+    
+}
+
+.tweet-action{
+    cursor: pointer;
+}
+
+.tweet-action-icon-contrainer{
+    padding: 10px;
+}
+
+.tweet-action-icon-contrainer:hover{
+    background-color: rgb(224, 235, 255);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.tweet-action-icon-contrainer:hover .tweet-action-icon{
+    /* fill: cornflowerblue;             */
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
+}
