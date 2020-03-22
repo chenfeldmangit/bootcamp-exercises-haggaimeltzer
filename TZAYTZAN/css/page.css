@@ -12,3 +12,10 @@ body{
     margin-right: auto;
     justify-content: center;
 }
+
+.center-column {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    max-width: 40em;
+}
