@@ -1,22 +1,23 @@
 .feed {
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
-    max-width: 40em;
+    
+   
 }
 
 .feed-item {
     display: flex;
     flex-direction: row;
     background-color: white;
-    margin: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
     padding: 0.6em;
     justify-content: space-evenly;
 }
 
 .feed-profile-img {
-    height: 1.8em;
-    width: 1.8em;
+    height: 3.5em;
+    width: 3.5em;
     border-radius: 50%;
     border: royalblue;
     margin: 0.6em;
@@ -28,6 +29,27 @@
 
 .tweet-inner-item{
     margin: 0.6em;
+}
+
+.tw-username{
+    text-decoration: none;
+    
+}
+
+.tw-username .username{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tw-username .twitterhandle{
+    color: gray;
+    text-decoration: none;
+}
+
+.twit-timestamp{
+    color: gray;
+    text-decoration: none;
 }
 
 .tweet-image {
@@ -46,10 +68,22 @@
 
 .tweet-action{
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.tweet-action-counter{
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .tweet-action-icon-contrainer{
     padding: 0.6em;
+}
+
+.tweet-action-icon{
+    height: 1em;
+    width: 1em;
 }
 
 .tweet-action-icon-contrainer:hover{

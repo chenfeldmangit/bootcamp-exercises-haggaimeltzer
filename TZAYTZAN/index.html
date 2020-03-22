@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="UTF-8">
     <title>Tzaitzan</title>
@@ -8,47 +8,139 @@
     <link rel="stylesheet" type="text/css" href="./css/nav_bar.css" />
     <link rel="stylesheet" type="text/css" href="./css/feed.css" />
     <style>
-      
+        .center-column {
+            display: flex;
+            flex-direction: column;
+            background-color: lightgray;
+            max-width: 40em;
+        }
+
+        .tweet-item {
+            margin-bottom: 1em;
+        }
+
+        .tweet-form {
+            display: flex;
+            flex-direction: column;
+            width: -moz-available;          /* WebKit-based browsers will ignore this. */
+            width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+            width: fill-available;
+        }
+
+        .tweet-input{
+            height: 4em;
+            width: -moz-available;          /* WebKit-based browsers will ignore this. */
+            width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+            width: fill-available;
+            margin: 0.6em;
+        }
+
+        .tweet-form-buttons {
+            width: -moz-available;          /* WebKit-based browsers will ignore this. */
+            width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+            width: fill-available;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0.6em;
+        }
+
+        .tweet-form-options {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;            
+        }
+
+        .tweet-form-option {
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .tweet-form-icon-contrainer {
+            padding: 0.6em;
+        }
+
+        .tweet-form-icon {
+            height: 1.4em;
+            width: 1.4em;
+            filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
+        }
+
+        .tweet-form-icon-contrainer:hover {
+            background-color: rgb(224, 235, 255);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .tweet-form-submit-btn {
+            font-size: 1.125em;
+            text-align:center;
+            line-height: 2em;
+            align-items: center;
+            height: 2em;
+            background-color: cornflowerblue;
+            color: white;
+            border-radius: 1.4em;
+            border-width: 0px;
+            padding-left: 0.7em;
+            padding-right: 0.7em;
+        }
+        .tweet-form-submit-btn:hover{
+            cursor: pointer;
+            background-color: royalblue;
+        }
     </style>
-</head>   
-  
-<body>   
+</head>
+
+<body>
     <div class="main-layout">
-        <nav id="navBar">  
+        <nav id="navBar">
             <a href="/index.html">
-                <img  id="twIcon" class="svg" height="24" width="24" src="./assets/twitter_logo.svg"/>
+                <img id="twIcon" class="svg"  src="./assets/twitter_logo.svg" />
             </a>
-            <a class="nav-item"  href="/index.html">
-            <img class="svg nav-icon" src="./assets/home_icon.svg"/>
+            <a class="nav-item" href="/index.html">
+                <img class="svg nav-icon" src="./assets/home_icon.svg" />
                 Home
             </a>
             <a class="nav-item" href="/index.html">
-                <img class="svg nav-icon" src="assets/explore_icon.svg"/>
+                <img class="svg nav-icon" src="assets/explore_icon.svg" />
                 Explore
-            </a> 
-            <a class="nav-item"  href="/index.html">
-                <img class="svg nav-icon" src="assets/notifications_icon.svg"/>
+            </a>
+            <a class="nav-item" href="/index.html">
+                <img class="svg nav-icon" src="assets/notifications_icon.svg" />
                 Notifications
             </a>
-            <a class="nav-item"  href="/index.html">
-                <img class="svg nav-icon" height="24" width="24" src="assets/messages_icon.svg"/>
-                
+            <a class="nav-item" href="/index.html">
+                <img class="svg nav-icon"  src="assets/messages_icon.svg" />
+
                 Messages
             </a>
-            <a class="nav-item"  href="/index.html">
-                <img class="svg nav-icon" height="24" width="24" src="assets/bookmarks_icon.svg"/>
+            <a class="nav-item" href="/index.html">
+                <img class="svg nav-icon"  src="assets/bookmarks_icon.svg" />
                 <span>Bookmarks</span>
             </a>
-            <a class="nav-item"  href="/index.html">
-                <img class="svg nav-icon" height="24" width="24" src="assets/list_icon.svg"/>
-            Lists
+            <a class="nav-item" href="/index.html">
+                <img class="svg nav-icon"  src="assets/list_icon.svg" />
+                Lists
             </a>
-            <a class="nav-item"  href="/index.html">
-                <img class="avatar nav-icon"  alt="" draggable="true" src="https://pbs.twimg.com/profile_images/475721381443670016/-Usuvy6t_normal.jpeg" class="css-9pa8cd">
+            <a class="nav-item" href="/index.html">
+                <img class="avatar nav-icon"
+                    src="https://pbs.twimg.com/profile_images/475721381443670016/-Usuvy6t_normal.jpeg">
                 Profile
             </a>
-            <a class="nav-item"  href="/index.html">
-                <svg class="nav-icon" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M16.5 10.25c-.965 0-1.75.787-1.75 1.75s.784 1.75 1.75 1.75c.964 0 1.75-.786 1.75-1.75s-.786-1.75-1.75-1.75zm0 2.5c-.414 0-.75-.336-.75-.75 0-.413.337-.75.75-.75s.75.336.75.75c0 .413-.336.75-.75.75zm-4.5-2.5c-.966 0-1.75.787-1.75 1.75s.785 1.75 1.75 1.75 1.75-.786 1.75-1.75-.784-1.75-1.75-1.75zm0 2.5c-.414 0-.75-.336-.75-.75 0-.413.337-.75.75-.75s.75.336.75.75c0 .413-.336.75-.75.75zm-4.5-2.5c-.965 0-1.75.787-1.75 1.75s.785 1.75 1.75 1.75c.964 0 1.75-.786 1.75-1.75s-.787-1.75-1.75-1.75zm0 2.5c-.414 0-.75-.336-.75-.75 0-.413.337-.75.75-.75s.75.336.75.75c0 .413-.336.75-.75.75z"></path><path d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75z"></path></g></svg>
+            <a class="nav-item" href="/index.html">
+                <svg class="nav-icon"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path
+                            d="M16.5 10.25c-.965 0-1.75.787-1.75 1.75s.784 1.75 1.75 1.75c.964 0 1.75-.786 1.75-1.75s-.786-1.75-1.75-1.75zm0 2.5c-.414 0-.75-.336-.75-.75 0-.413.337-.75.75-.75s.75.336.75.75c0 .413-.336.75-.75.75zm-4.5-2.5c-.966 0-1.75.787-1.75 1.75s.785 1.75 1.75 1.75 1.75-.786 1.75-1.75-.784-1.75-1.75-1.75zm0 2.5c-.414 0-.75-.336-.75-.75 0-.413.337-.75.75-.75s.75.336.75.75c0 .413-.336.75-.75.75zm-4.5-2.5c-.965 0-1.75.787-1.75 1.75s.785 1.75 1.75 1.75c.964 0 1.75-.786 1.75-1.75s-.787-1.75-1.75-1.75zm0 2.5c-.414 0-.75-.336-.75-.75 0-.413.337-.75.75-.75s.75.336.75.75c0 .413-.336.75-.75.75z">
+                        </path>
+                        <path
+                            d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75z">
+                        </path>
+                    </g>
+                </svg>
                 More...
             </a>
             <a>
@@ -57,204 +149,258 @@
                 </div>
             </a>
         </nav>
-        <div id="newsFeed" class="feed">
-            <div class="feed-item">
-                <img class="feed-profile-img" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/00/0009ce7143f230d5ece8c39563952f651fb7ae04.jpg">
-                <div class="tweet-item">
-                    <div class="tweet-title tweet-inner-item">
-                        <strong> NickName </strong>
-                        <span>@twitterhandle</span>
-                        <span> - </span>
-                        <span> timestamp </span>
+        <div class="center-column">
+            <div class="feed-item tweet-item">
+                <img class="feed-profile-img"
+                    src="https://pbs.twimg.com/profile_images/475721381443670016/-Usuvy6t_normal.jpeg">
+                <form class="tweet-form">
+                    <input class="tweet-input" type="text" id="tweetInput" name="tweetInput" required>
+                    <div class="tweet-form-buttons">
+                        <div class="tweet-form-options">
+                            <div class="tweet-form-option">
+                                <div class="tweet-form-icon-contrainer">
+                                    <img class="svg tweet-form-icon" src="./assets/picture_icon.svg" />
+                                </div>
+                            </div>
+                        </div>
+                        <input class="tweet-form-submit-btn" type="submit" value="Tweet">
                     </div>
-                    <div class="tweet-inner-item">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et mollitia accusamus totam, cupiditate eaque.
+                </form>
+            </div>
+            <div id="newsFeed" class="feed">
+                <div class="feed-item">
+                    <div>
+                        <img class="feed-profile-img"
+                            src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/00/0009ce7143f230d5ece8c39563952f651fb7ae04.jpg">
                     </div>
-                    <img class="tweet-image tweet-inner-item" src="https://picsum.photos/300/200?random=1">
-                    <div class="tweet-actions tweet-inner-item">
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                                <img class="svg tweet-action-icon" height="18" width="18" src="./assets/comment_icon.svg"/>
-                            </span>
-                            5
+                    <div class="tweet-item">
+                        <div class="tweet-title tweet-inner-item">
+                            <a class="tw-username" href="index.html">
+                                <span class="username">NickName</span>
+                                <span class="twitterhandle">@twitterhandle </span>
+                            </a>
+                            <span> - </span>
+                            <a class="twit-timestamp" href="index.html"> timestamp </a>
                         </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/retweet_icon.svg"/>
-                            </span>
-                            5
+                        <div class="tweet-inner-item">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet
+                            laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et
+                            mollitia accusamus totam, cupiditate eaque.
                         </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/like_icon.svg"/>
-                            </span>
-                            5
-                        </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/share_icon.svg"/>
-                            </span>
-                            5
+                        <img class="tweet-image tweet-inner-item" src="https://picsum.photos/300/200?random=1">
+                        <div class="tweet-actions tweet-inner-item">
+                            <div class="tweet-action">
+                                <div class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
+                                </div>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <div class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
+                                </div>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <div class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
+                                </div>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <div class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
+                                </div>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="feed-item">
-                <img class="feed-profile-img " src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/00/0068036358c631d41dc586dd0c0a72096e2e903a.jpg">
-                <div class="tweet-item">
-                    <div class="tweet-title  tweet-inner-item">
-                        <strong>NickName </strong>
-                        <span>@twitterhandle</span>
-                        <span> - </span>
-                        <span> timestamp </span>
+                <div class="feed-item">
+                    <div>
+                        <img class="feed-profile-img "
+                        src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/00/0068036358c631d41dc586dd0c0a72096e2e903a.jpg">
                     </div>
-                    <div class="tweet-inner-item">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et mollitia accusamus totam, cupiditate eaque.
-                    </div>
-                    <img class="tweet-image  tweet-inner-item" src="https://picsum.photos/300/200?random=2">
-                    <div class="tweet-actions tweet-inner-item">
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                                <img class="svg tweet-action-icon" height="18" width="18" src="./assets/comment_icon.svg"/>
-                            </span>
-                            5
+                    <div class="tweet-item">
+                        <div class="tweet-title  tweet-inner-item">
+                            <a class="tw-username" href="index.html">
+                                <span class="username">NickName</span>
+                                <span class="twitterhandle">@twitterhandle </span>
+                            </a>
+                            <span> - </span>
+                            <a class="twit-timestamp" href="index.html"> timestamp </a>
                         </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/retweet_icon.svg"/>
-                            </span>
-                            5
+                        <div class="tweet-inner-item">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet
+                            laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et
+                            mollitia accusamus totam, cupiditate eaque.
                         </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/like_icon.svg"/>
-                            </span>
-                            5
-                        </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/share_icon.svg"/>
-                            </span>
-                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="feed-item">
-                <img class="feed-profile-img" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjA5MjI0MzY2MF5BMl5BanBnXkFtZTcwMzM3ODM3OA@@._V1_UX172_CR0,0,172,256_AL_.jpg">
-                <div class="tweet-item">
-                    <div class="tweet-title  tweet-inner-item">
-                        <strong>NickName </strong>
-                        <span>@twitterhandle</span>
-                        <span> - </span>
-                        <span> timestamp </span>
-                    </div>
-                    <div class=" tweet-inner-item">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et mollitia accusamus totam, cupiditate eaque.
-                    </div>
-                    <img class="tweet-image  tweet-inner-item" src="https://picsum.photos/300/200?random=3">
-                    <div class="tweet-actions tweet-inner-item">
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                                <img class="svg tweet-action-icon" height="18" width="18" src="./assets/comment_icon.svg"/>
-                            </span>
-                            5
-                        </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/retweet_icon.svg"/>
-                            </span>
-                            5
-                        </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/like_icon.svg"/>
-                            </span>
-                            5
-                        </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/share_icon.svg"/>
-                            </span>
+                        <img class="tweet-image  tweet-inner-item" src="https://picsum.photos/300/200?random=2">
+                        <div class="tweet-actions tweet-inner-item">
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="feed-item">
-                <img class="feed-profile-img" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEwMjQ3ODgxOV5BMl5BanBnXkFtZTgwNzc4NjE4NTE@._V1_UY256_CR106,0,172,256_AL_.jpg">
-                <div class="tweet-item">
-                    <div class="tweet-title  tweet-inner-item">
-                        <strong>NickName </strong>
-                        <span>@twitterhandle</span>
-                        <span> - </span>
-                        <span> timestamp </span>
+                <div class="feed-item">
+                    <div>
+                        <img class="feed-profile-img"
+                        src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjA5MjI0MzY2MF5BMl5BanBnXkFtZTcwMzM3ODM3OA@@._V1_UX172_CR0,0,172,256_AL_.jpg">
                     </div>
-                    <div class="tweet-inner-item">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et mollitia accusamus totam, cupiditate eaque.
-                    </div>
-                    <img class="tweet-image  tweet-inner-item " src="https://picsum.photos/300/200?random=4">
-                    <div class="tweet-actions tweet-inner-item">
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                                <img class="svg tweet-action-icon" height="18" width="18" src="./assets/comment_icon.svg"/>
-                            </span>
-                            5
+                    <div class="tweet-item">
+                        <div class="tweet-title  tweet-inner-item">
+                            <a class="tw-username" href="index.html">
+                                <span class="username">NickName</span>
+                                <span class="twitterhandle">@twitterhandle </span>
+                            </a>
+                            <span> - </span>
+                            <a class="twit-timestamp" href="index.html"> timestamp </a>
                         </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/retweet_icon.svg"/>
-                            </span>
-                            5
+                        <div class=" tweet-inner-item">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet
+                            laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et
+                            mollitia accusamus totam, cupiditate eaque.
                         </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/like_icon.svg"/>
-                            </span>
-                            5
-                        </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/share_icon.svg"/>
-                            </span>
+                        <img class="tweet-image  tweet-inner-item" src="https://picsum.photos/300/200?random=3">
+                        <div class="tweet-actions tweet-inner-item">
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="feed-item">
-                <img class="feed-profile-img" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxODk4NzUwMF5BMl5BanBnXkFtZTcwMTc1MDQ4Nw@@._V1_UY256_CR14,0,172,256_AL_.jpg">
-                <div class="tweet-item">
-                    <div class="tweet-title tweet-inner-item">
-                        <strong>NickName </strong>
-                        <span>@twitterhandle</span>
-                        <span> - </span>
-                        <span> timestamp </span>
+                <div class="feed-item">
+                    <div>
+                        <img class="feed-profile-img"
+                        src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEwMjQ3ODgxOV5BMl5BanBnXkFtZTgwNzc4NjE4NTE@._V1_UY256_CR106,0,172,256_AL_.jpg">
                     </div>
-                    <div class="tweet-inner-item">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et mollitia accusamus totam, cupiditate eaque.
+                    <div class="tweet-item">
+                        <div class="tweet-title  tweet-inner-item">
+                            <a class="tw-username" href="index.html">
+                                <span class="username">NickName</span>
+                                <span class="twitterhandle">@twitterhandle </span>
+                            </a>
+                            <span> - </span>
+                            <a class="twit-timestamp" href="index.html"> timestamp </a>
+                        </div>
+                        <div class="tweet-inner-item">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet
+                            laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et
+                            mollitia accusamus totam, cupiditate eaque.
+                        </div>
+                        <img class="tweet-image  tweet-inner-item " src="https://picsum.photos/300/200?random=4">
+                        <div class="tweet-actions tweet-inner-item">
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <img class="tweet-image tweet-inner-item" src="https://picsum.photos/300/200?random=5">
-                    <div class="tweet-actions tweet-inner-item">
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                                <img class="svg tweet-action-icon" height="18" width="18" src="./assets/comment_icon.svg"/>
-                            </span>
-                            5
+                </div>
+                <div class="feed-item">
+                    <div>
+                        <img class="feed-profile-img"
+                        src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxODk4NzUwMF5BMl5BanBnXkFtZTcwMTc1MDQ4Nw@@._V1_UY256_CR14,0,172,256_AL_.jpg">
+                    </div>
+                    <div class="tweet-item">
+                        <div class="tweet-title tweet-inner-item">
+                            <a class="tw-username" href="index.html">
+                                <span class="username">NickName</span>
+                                <span class="twitterhandle">@twitterhandle </span>
+                            </a>
+                            <span> - </span>
+                            <a class="twit-timestamp" href="index.html"> timestamp </a>
                         </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/retweet_icon.svg"/>
-                            </span>
-                            5
+                        <div class="tweet-inner-item">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet
+                            laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et
+                            mollitia accusamus totam, cupiditate eaque.
                         </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/like_icon.svg"/>
-                            </span>
-                            5
-                        </div>
-                        <div class="tweet-action">
-                            <span class="tweet-action-icon-contrainer" >
-                            <img class="svg tweet-action-icon" height="18" width="18" src="./assets/share_icon.svg"/>
-                            </span>
+                        <img class="tweet-image tweet-inner-item" src="https://picsum.photos/300/200?random=5">
+                        <div class="tweet-actions tweet-inner-item">
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
+                                </span>
+                                <div class="tweet-action-counter"> 5</div>
+                            </div>
+                            <div class="tweet-action">
+                                <span class="tweet-action-icon-contrainer">
+                                    <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
