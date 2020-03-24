@@ -1,98 +1,81 @@
 .feed {
-    display: flex;
-    flex-direction: column;
-    
-   
+  display: flex;
+  flex-direction: column;
 }
 
 .feed-item {
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    margin-left: 1px;
-    margin-right: 1px;
-    padding: 0.6em;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  margin-left: 1px;
+  margin-right: 1px;
+  padding: 0.6em;
+  justify-content: space-evenly;
+}
+.feed-item .feed-profile-img {
+  height: 3.5em;
+  width: 3.5em;
+  border-radius: 50%;
+  border: #3aabff;
+  margin: 0.6em;
+}
+.feed-item .tweet-item {
+  margin-bottom: 1em;
+}
+.feed-item .tweet-item .tweet-inner-item {
+  margin: 0.6em;
+}
+.feed-item .tweet-item .tw-username {
+  text-decoration: none;
+}
+.feed-item .tweet-item .tw-username .username {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.feed-item .tweet-item .tw-username .twitterhandle {
+  color: gray;
+  text-decoration: none;
+}
+.feed-item .tweet-item .twit-timestamp {
+  color: gray;
+  text-decoration: none;
+}
+.feed-item .tweet-item .tweet-image {
+  width: -moz-available;
+  /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;
+  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+}
+.feed-item .tweet-item .tweet-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.6em;
+}
+.feed-item .tweet-item .tweet-actions .tweet-action {
+  display: flex;
+  flex-direction: row;
+}
+.feed-item .tweet-item .tweet-actions .tweet-action .tweet-action-counter {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.feed-item .tweet-item .tweet-actions .tweet-action .tweet-action-icon-container {
+  padding: 0.2em;
+  cursor: pointer;
+}
+.feed-item .tweet-item .tweet-actions .tweet-action .tweet-action-icon-container .tweet-action-icon {
+  height: 1em;
+  width: 1em;
+}
+.feed-item .tweet-item .tweet-actions .tweet-action .tweet-action-icon-container:hover {
+  background-color: #e0ebff;
+  border-radius: 50%;
+}
+.feed-item .tweet-item .tweet-actions .tweet-action .tweet-action-icon-container:hover .tweet-action-icon {
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
 }
 
-.feed-profile-img {
-    height: 3.5em;
-    width: 3.5em;
-    border-radius: 50%;
-    border: royalblue;
-    margin: 0.6em;
-}
-
-.tweet-item {
-    margin-bottom: 1em;
-}
-
-.tweet-inner-item{
-    margin: 0.6em;
-}
-
-.tw-username{
-    text-decoration: none;
-    
-}
-
-.tw-username .username{
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.tw-username .twitterhandle{
-    color: gray;
-    text-decoration: none;
-}
-
-.twit-timestamp{
-    color: gray;
-    text-decoration: none;
-}
-
-.tweet-image {
-    width: -moz-available;          /* WebKit-based browsers will ignore this. */
-    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
-    width: fill-available;
-}
-
-.tweet-actions{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0.6em;
-    
-}
-
-.tweet-action{
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-}
-
-.tweet-action-counter{
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.tweet-action-icon-contrainer{
-    padding: 0.6em;
-}
-
-.tweet-action-icon{
-    height: 1em;
-    width: 1em;
-}
-
-.tweet-action-icon-contrainer:hover{
-    background-color: rgb(224, 235, 255);
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.tweet-action-icon-contrainer:hover .tweet-action-icon{
-    /* fill: cornflowerblue;             */
-    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
-}
+/*# sourceMappingURL=feed.css.map */

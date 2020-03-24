@@ -8,44 +8,45 @@
     <link rel="stylesheet" type="text/css" href="./css/nav_bar.css" />
     <link rel="stylesheet" type="text/css" href="./css/feed.css" />
     <link rel="stylesheet" type="text/css" href="./css/tweet_form.css" />
-    <style>
-    </style>
+    <link rel="stylesheet" type="text/css" href="./css/profile.css" />
+    <script src="./js/navBar.js"></script> 
+    <script src="./js/profile.js"></script> 
 </head>
 
-<body>
+<body onload="fillProfileData();fillMyActivities()">
     <div class="main-layout">
         <nav id="navBar">
             <a href="/index.html">
                 <img id="twIcon" class="svg"  src="./assets/twitter_logo.svg" />
             </a>
-            <a class="nav-item" href="/index.html">
+            <a class="nav-item" onclick="onHomeClicked()">
                 <img class="svg nav-icon" src="./assets/home_icon.svg" />
-                Home
+                <span class=navitem-text> Home </span>
             </a>
             <a class="nav-item" href="/index.html">
                 <img class="svg nav-icon" src="assets/explore_icon.svg" />
-                Explore
+                <span class=navitem-text>Explore</span>
             </a>
             <a class="nav-item" href="/index.html">
                 <img class="svg nav-icon" src="assets/notifications_icon.svg" />
-                Notifications
+                <span class=navitem-text>Notifications</span>
             </a>
             <a class="nav-item" href="/index.html">
                 <img class="svg nav-icon"  src="assets/messages_icon.svg" />
-                Messages
+                <span class=navitem-text>Messages</span>
             </a>
             <a class="nav-item" href="/index.html">
                 <img class="svg nav-icon"  src="assets/bookmarks_icon.svg" />
-                <span>Bookmarks</span>
+                <span class=navitem-text>Bookmarks</span>
             </a>
             <a class="nav-item" href="/index.html">
                 <img class="svg nav-icon"  src="assets/list_icon.svg" />
-                Lists
+                <span class=navitem-text>Lists</span>
             </a>
-            <a class="nav-item" href="/index.html">
+            <a class="nav-item" onclick="onProfileClicked()">
                 <img class="avatar nav-icon"
                     src="https://pbs.twimg.com/profile_images/475721381443670016/-Usuvy6t_normal.jpeg">
-                Profile
+                    <span class=navitem-text>Profile</span>
             </a>
             <a class="nav-item" href="/index.html">
                 <svg class="nav-icon"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -58,16 +59,103 @@
                         </path>
                     </g>
                 </svg>
-                More...
+                <span class=navitem-text>More...</span>
             </a>
             <a>
                 <div class="twit-btn">
-                    Tweet
+                    <img class="tweet-icon" src="assets/tweet.svg"/>
+                    <span class=twit-btn-text>Tweet</span>
+                    
                 </div>
             </a>
         </nav>
         <div class="center-column">
-            <div class="feed-item tweet-item">
+            <!--profile-->
+            <div id="profile-container" >
+                <div id="profile-top">
+                    <img class="background-img" />
+                    <button id="edit-profile-btn">
+                        Edit profile
+                    </button>
+                    <img class="my-profile-img" />
+                </div>
+                
+                <div class="profile-title">
+                    <span class="username">Username</span>
+                    <span class="twitterhandle">@twitterhandle </span>
+                    <span  class="joinedTime"> time </span> 
+                </div>
+                <div class="profile-followers-container">
+                    <span class="numFollowing"> 5 </span><span> following</span>
+                    <span class="numFollowers"> 50000 </span> <span>followers</span>
+                </div>
+            </div>
+
+            <div id="my-activities" >
+                <nav>
+                    <div>
+                        Tweets
+                    </div>
+                </nav>
+                <div class="my-activities-content">
+                    <div class="tweets">
+                        <template id="tweet-activity-template">
+                            <div class="feed-item">
+                                <div>
+                                    <img class="feed-profile-img"
+                                        src="https://pbs.twimg.com/profile_images/475721381443670016/-Usuvy6t_normal.jpeg">
+                                </div>
+                                <div class="tweet-item">
+                                    <div class="tweet-title tweet-inner-item">
+                                        <a class="tw-username" href="index.html">
+                                            <span class="username">Meltzerman</span>
+                                            <span class="twitterhandle">@twitterhandle </span>
+                                        </a>
+                                        <span> - </span>
+                                        <a class="twit-timestamp" href="index.html"> timestamp </a>
+                                    </div>
+                                    <div class="tweet-inner-item">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet
+                                        laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et
+                                        mollitia accusamus totam, cupiditate eaque.
+                                    </div>
+                                    <img class="tweet-image tweet-inner-item" src="https://picsum.photos/300/200?random=1">
+                                    <div class="tweet-actions tweet-inner-item">
+                                        <div class="tweet-action">
+                                            <div class="tweet-action-icon-container">
+                                                <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
+                                            </div>
+                                            <div class="tweet-action-counter"> 5</div>
+                                        </div>
+                                        <div class="tweet-action">
+                                            <div class="tweet-action-icon-container">
+                                                <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
+                                            </div>
+                                            <div class="tweet-action-counter"> 5</div>
+                                        </div>
+                                        <div class="tweet-action">
+                                            <div class="tweet-action-icon-container">
+                                                <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
+                                            </div>
+                                            <div class="tweet-action-counter"> 5</div>
+                                        </div>
+                                        <div class="tweet-action">
+                                            <div class="tweet-action-icon-container">
+                                                <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
+                                            </div>
+                                            <div class="tweet-action-counter"> 5</div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </template>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--feed-->
+            <div id="tweet-form" class="feed-item tweet-item">
                 <img class="feed-profile-img"
                     src="https://pbs.twimg.com/profile_images/475721381443670016/-Usuvy6t_normal.jpeg">
                 <form class="tweet-form">
@@ -75,7 +163,7 @@
                     <div class="tweet-form-buttons">
                         <div class="tweet-form-options">
                             <div class="tweet-form-option">
-                                <div class="tweet-form-icon-contrainer">
+                                <div class="tweet-form-icon-container">
                                     <img class="svg tweet-form-icon" src="./assets/picture_icon.svg" />
                                 </div>
                             </div>
@@ -107,25 +195,25 @@
                         <img class="tweet-image tweet-inner-item" src="https://picsum.photos/300/200?random=1">
                         <div class="tweet-actions tweet-inner-item">
                             <div class="tweet-action">
-                                <div class="tweet-action-icon-contrainer">
+                                <div class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
                                 </div>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <div class="tweet-action-icon-contrainer">
+                                <div class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
                                 </div>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <div class="tweet-action-icon-contrainer">
+                                <div class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
                                 </div>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <div class="tweet-action-icon-contrainer">
+                                <div class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
                                 </div>
                                 <div class="tweet-action-counter"> 5</div>
@@ -155,25 +243,25 @@
                         <img class="tweet-image  tweet-inner-item" src="https://picsum.photos/300/200?random=2">
                         <div class="tweet-actions tweet-inner-item">
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
                                 </span>
                             </div>
@@ -202,25 +290,25 @@
                         <img class="tweet-image  tweet-inner-item" src="https://picsum.photos/300/200?random=3">
                         <div class="tweet-actions tweet-inner-item">
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
                                 </span>
                             </div>
@@ -249,25 +337,25 @@
                         <img class="tweet-image  tweet-inner-item " src="https://picsum.photos/300/200?random=4">
                         <div class="tweet-actions tweet-inner-item">
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
                                 </span>
                             </div>
@@ -296,25 +384,25 @@
                         <img class="tweet-image tweet-inner-item" src="https://picsum.photos/300/200?random=5">
                         <div class="tweet-actions tweet-inner-item">
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
                                 </span>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <span class="tweet-action-icon-contrainer">
+                                <span class="tweet-action-icon-container">
                                     <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
                                 </span>
                             </div>
@@ -322,6 +410,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </body>

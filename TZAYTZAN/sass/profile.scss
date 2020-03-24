@@ -1,0 +1,51 @@
+@use 'commons/layouts' as layout;
+@use 'commons/colors' as color;
+
+$feed-padding: 0.6em;
+
+#profile-container{
+    display: none;
+    flex-direction: column;
+    #profile-top{
+        @include layout.flexColomn;
+        @include layout.align-right;
+        position: relative;
+        background-color: white;
+        .my-profile-img{
+            width: 5em;
+            height: 5em;
+            position: absolute;
+            bottom: 0; 
+            left:0;
+            margin-left: $feed-padding*2;
+            margin-bottom: $feed-padding;
+            border-radius: 50%;
+            border-color: white;
+            border-width: thick;
+            border-style: solid;
+        }
+        #edit-profile-btn{
+            @include layout.fit-content;
+            text-align: center;
+            line-height: 2em;
+            align-items: center;
+            height: 2em;
+            background-color: white;
+            color: color.$primary-color;
+            border-radius: 1.4em;
+            padding-left: 0.7em;
+            padding-right: 0.7em;
+            border-style: solid;
+            border-width: 0.5px;
+            border-color: color.$primary-color;
+            font-weight: bold;
+            margin-right: $feed-padding*2;
+            margin-bottom: $feed-padding;
+            margin-top: $feed-padding*2;
+        }
+    }
+}
+
+#my-activities{
+    display: none;
+}

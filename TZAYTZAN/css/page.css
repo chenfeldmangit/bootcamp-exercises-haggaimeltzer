@@ -1,21 +1,23 @@
-body{
-    font-size: 16px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
+body {
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
 }
 
-.main-layout{
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
+.main-layout {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 
 .center-column {
-    display: flex;
-    flex-direction: column;
-    background-color: lightgray;
-    max-width: 40em;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  max-width: 40em;
 }
+
+/*# sourceMappingURL=page.css.map */
