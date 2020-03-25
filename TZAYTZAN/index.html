@@ -12,7 +12,7 @@
     <script src="./js/navBar.js"></script> 
     <script src="./js/profile.js"></script> 
 </head>
-
+ 
 <body onload="fillProfileData();fillMyActivities()">
     <div class="main-layout">
         <nav id="navBar">
@@ -62,9 +62,9 @@
                 <span class=navitem-text>More...</span>
             </a>
             <a>
-                <div class="twit-btn">
+                <div class="tweet-btn">
                     <img class="tweet-icon" src="assets/tweet.svg"/>
-                    <span class=twit-btn-text>Tweet</span>
+                    <span class=tweet-btn-text>Tweet</span>
                     
                 </div>
             </a>
@@ -73,7 +73,9 @@
             <!--profile-->
             <div id="profile-container" >
                 <div id="profile-top">
-                    <img class="background-img" />
+                    <div class="bg-img-container">
+                        <img class="background-img" />
+                    </div>
                     <button id="edit-profile-btn">
                         Edit profile
                     </button>
@@ -92,8 +94,8 @@
             </div>
 
             <div id="my-activities" >
-                <nav>
-                    <div>
+                <nav class="my-activity-nav-bar">
+                    <div class="my-activity-nav-item">
                         Tweets
                     </div>
                 </nav>
@@ -112,9 +114,9 @@
                                             <span class="twitterhandle">@twitterhandle </span>
                                         </a>
                                         <span> - </span>
-                                        <a class="twit-timestamp" href="index.html"> timestamp </a>
+                                        <a class="tweet-timestamp"> timestamp </a>
                                     </div>
-                                    <div class="tweet-inner-item">
+                                    <div class="tweet-text tweet-inner-item">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet
                                         laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consectetur et
                                         mollitia accusamus totam, cupiditate eaque.
@@ -125,25 +127,24 @@
                                             <div class="tweet-action-icon-container">
                                                 <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
                                             </div>
-                                            <div class="tweet-action-counter"> 5</div>
+                                            <div class="tweet-action-counter comment_counter"> 5</div>
                                         </div>
                                         <div class="tweet-action">
                                             <div class="tweet-action-icon-container">
                                                 <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
                                             </div>
-                                            <div class="tweet-action-counter"> 5</div>
+                                            <div class="tweet-action-counter retweet_counter"> 5</div>
                                         </div>
                                         <div class="tweet-action">
                                             <div class="tweet-action-icon-container">
                                                 <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
                                             </div>
-                                            <div class="tweet-action-counter"> 5</div>
+                                            <div class="tweet-action-counter like_counter"> 5</div>
                                         </div>
                                         <div class="tweet-action">
                                             <div class="tweet-action-icon-container">
                                                 <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
                                             </div>
-                                            <div class="tweet-action-counter"> 5</div>
                                         </div>
                                     </div>
                                 </div> 
@@ -185,7 +186,7 @@
                                 <span class="twitterhandle">@twitterhandle </span>
                             </a>
                             <span> - </span>
-                            <a class="twit-timestamp" href="index.html"> timestamp </a>
+                            <a class="tweet-timestamp" href="index.html"> timestamp </a>
                         </div>
                         <div class="tweet-inner-item">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet
@@ -233,7 +234,7 @@
                                 <span class="twitterhandle">@twitterhandle </span>
                             </a>
                             <span> - </span>
-                            <a class="twit-timestamp" href="index.html"> timestamp </a>
+                            <a class="tweet-timestamp" href="index.html"> timestamp </a>
                         </div>
                         <div class="tweet-inner-item">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet
@@ -280,7 +281,7 @@
                                 <span class="twitterhandle">@twitterhandle </span>
                             </a>
                             <span> - </span>
-                            <a class="twit-timestamp" href="index.html"> timestamp </a>
+                            <a class="tweet-timestamp" href="index.html"> timestamp </a>
                         </div>
                         <div class=" tweet-inner-item">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet
@@ -327,7 +328,7 @@
                                 <span class="twitterhandle">@twitterhandle </span>
                             </a>
                             <span> - </span>
-                            <a class="twit-timestamp" href="index.html"> timestamp </a>
+                            <a class="tweet-timestamp" href="index.html"> timestamp </a>
                         </div>
                         <div class="tweet-inner-item">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet
@@ -374,7 +375,7 @@
                                 <span class="twitterhandle">@twitterhandle </span>
                             </a>
                             <span> - </span>
-                            <a class="twit-timestamp" href="index.html"> timestamp </a>
+                            <a class="tweet-timestamp" href="index.html"> timestamp </a>
                         </div>
                         <div class="tweet-inner-item">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet

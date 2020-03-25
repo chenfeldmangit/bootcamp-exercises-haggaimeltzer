@@ -5,7 +5,7 @@ $nav-items-font-size : 1.5em;
 $nav-items-padding : 0.5em;
 
 #navBar{
-    @include layout.flexColomn;
+    @include layout.flexColumn;
     min-width: 15em;
     justify-content: left;
     @media (max-width: 600px) {
@@ -44,7 +44,7 @@ $nav-items-padding : 0.5em;
         }
     }
 
-    .twit-btn {
+    .tweet-btn {
 
         font-size: 1.125em;
         text-align:center;
@@ -65,7 +65,7 @@ $nav-items-padding : 0.5em;
                 display: inline;
             }    
         }
-        .twit-btn-text{
+        .tweet-btn-text{
             filter: color.$white-color-filter;
             @media (max-width: 600px) {
                 display: none;

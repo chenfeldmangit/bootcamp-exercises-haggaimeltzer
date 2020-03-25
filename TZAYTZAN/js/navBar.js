@@ -1,6 +1,6 @@
 function onHomeClicked(){
-    document.getElementById("tweet-form").style.display = "block";
-    document.getElementById("newsFeed").style.display = "block";
+    document.getElementById("tweet-form").style.display = "flex";
+    document.getElementById("newsFeed").style.display = "flex";
 
     document.getElementById("profile-container").style.display = "none";
     document.getElementById("my-activities").style.display = "none";

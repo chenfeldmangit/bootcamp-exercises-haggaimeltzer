@@ -5,7 +5,7 @@ $feed-padding: 0.6em;
 $profile-diameter: 3.5em;
 
 .feed {
-    @include layout.flexColomn;
+    @include layout.flexColumn;
 }
 
 .feed-item {
@@ -26,6 +26,7 @@ $profile-diameter: 3.5em;
 
     .tweet-item {
         margin-bottom: 1em;
+        @include layout.fill-available-width;
 
         .tweet-inner-item{
             margin: $feed-padding;
@@ -46,7 +47,7 @@ $profile-diameter: 3.5em;
             }
         }
         
-        .twit-timestamp{
+        .tweet-timestamp{
             color: color.$text-light-color;
             text-decoration: none;
         }

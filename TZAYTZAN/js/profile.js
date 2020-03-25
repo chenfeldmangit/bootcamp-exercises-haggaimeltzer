@@ -13,23 +13,23 @@ profile_data = {
             text : "this is my last tweet",
             img : "https://picsum.photos/300/200?random=8",
             numComments : 1,
-            numRetweers : 2,
+            numRetweets : 2,
             numLikes : 3,
         },    
         {
             timestamp : "1/1/1999",
             text : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam ad dolor. Eveniet laborum officiis recusandae praesentium pariatur iure minus quod illum, aut, consec",
-            img : "https://picsum.photos/300/200?random=8",
+            img : "https://picsum.photos/300/200?random=3",
             numComments : 1,
-            numRetweers: 2,
+            numRetweets: 2,
             numLikes : 3,
         } ,      
         {
             timestamp : "1/1/1999",
             text : "this is another tweet",
-            img : "https://picsum.photos/300/200?random=8",
+            img : "https://picsum.photos/300/200?random=87",
             numComments : 1,
-            numRetweers : 2,
+            numRetweets : 2,
             numLikes : 3,
         } ,        
     ]   ,
@@ -56,5 +56,23 @@ function fillProfileData(){
 };
 
 function fillMyActivities(){
+    let tweetTemplate = document.getElementById("tweet-activity-template");
+    let myTweets = document.querySelector("#my-activities .my-activities-content .tweets");
+    profile_data.lastTweets.forEach(tweetData => {
+        let tweetElement = tweetTemplate.content.cloneNode(true);
+        tweetElement.querySelector(".feed-profile-img").src = profile_data.profileImage;
+        tweetElement.querySelector(".username").textContent = profile_data.username;
+        tweetElement.querySelector(".twitterhandle").textContent = profile_data.twitterHandle;
+        tweetElement.querySelector(".tweet-timestamp").textContent = tweetData.timestamp;
+        tweetElement.querySelector(".tweet-text").textContent = tweetData.text;
+        tweetElement.querySelector(".tweet-image").src = tweetData.img;
+        tweetElement.querySelector(".comment_counter").textContent = tweetData.numComments;
+        tweetElement.querySelector(".retweet_counter").textContent = tweetData.numRetweets;
+        tweetElement.querySelector(".like_counter").textContent = tweetData.numLikes;
 
+
+
+        myTweets.appendChild(tweetElement);
+    });
+   
 };

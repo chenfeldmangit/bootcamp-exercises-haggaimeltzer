@@ -2,7 +2,7 @@
 @use 'commons/colors' as color;
 
 .tweet-form {
-    @include layout.flexColomn;
+    @include layout.flexColumn;
     @include  layout.fill-available-width;  
         
     .tweet-input {
