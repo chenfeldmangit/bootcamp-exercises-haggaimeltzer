@@ -9,11 +9,15 @@
     <link rel="stylesheet" type="text/css" href="./css/feed.css" />
     <link rel="stylesheet" type="text/css" href="./css/tweet_form.css" />
     <link rel="stylesheet" type="text/css" href="./css/profile.css" />
+    <script src="./js/DB.js"></script>
+    <script src="./js/TweetsApi.js"></script>
     <script src="./js/navBar.js"></script> 
     <script src="./js/profile.js"></script> 
+    <script src="./js/newsFeed.js"></script> 
+    <script src="./js/tweetForm.js"></script> 
 </head>
  
-<body onload="fillProfileData();fillMyActivities()">
+<body onload="fillNewsFeed();fillProfileData();fillMyActivities();">
     <div class="main-layout">
         <nav id="navBar">
             <a href="/index.html">
@@ -156,10 +160,10 @@
             </div>
 
             <!--feed-->
-            <div id="tweet-form" class="feed-item tweet-item">
+            <div id="tweet-form-container" class="feed-item tweet-item">
                 <img class="feed-profile-img"
                     src="https://pbs.twimg.com/profile_images/475721381443670016/-Usuvy6t_normal.jpeg">
-                <form class="tweet-form">
+                <form id="tweet-form" class="tweet-form"  onSubmit="onTweetFormSubmit(event)">
                     <input class="tweet-input" type="text" id="tweetInput" name="tweetInput" required>
                     <div class="tweet-form-buttons">
                         <div class="tweet-form-options">
@@ -174,6 +178,54 @@
                 </form>
             </div>
             <div id="newsFeed" class="feed">
+                <template id="tweet-template">
+                    <div class="feed-item">
+                        <div>
+                            <img class="feed-profile-img"
+                                src="https://pbs.twimg.com/profile_images/475721381443670016/-Usuvy6t_normal.jpeg">
+                        </div>
+                        <div class="tweet-item">
+                            <div class="tweet-title tweet-inner-item">
+                                <a class="tw-username" href="index.html">
+                                    <span class="username">NickName</span>
+                                    <span class="twitterhandle">@twitterhandle </span>
+                                </a>
+                                <span> - </span>
+                                <a class="tweet-timestamp"> timestamp </a>
+                            </div>
+                            <div class="tweet-text tweet-inner-item">
+                                tweet text
+                            </div>
+                            <img class="tweet-image tweet-inner-item" src="">
+                            <div class="tweet-actions tweet-inner-item">
+                                <div class="tweet-action">
+                                    <div class="tweet-action-icon-container">
+                                        <img class="svg tweet-action-icon" src="./assets/comment_icon.svg" />
+                                    </div>
+                                    <div class="tweet-action-counter comment_counter"> 0</div>
+                                </div>
+                                <div class="tweet-action">
+                                    <div class="tweet-action-icon-container">
+                                        <img class="svg tweet-action-icon" src="./assets/retweet_icon.svg" />
+                                    </div>
+                                    <div class="tweet-action-counter retweet_counter"> 0</div>
+                                </div>
+                                <div class="tweet-action">
+                                    <div class="tweet-action-icon-container">
+                                        <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
+                                    </div>
+                                    <div class="tweet-action-counter like_counter"> 0</div>
+                                </div>
+                                <div class="tweet-action">
+                                    <div class="tweet-action-icon-container">
+                                        <img class="svg tweet-action-icon" src="./assets/share_icon.svg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </template>
+
                 <div class="feed-item">
                     <div>
                         <img class="feed-profile-img"

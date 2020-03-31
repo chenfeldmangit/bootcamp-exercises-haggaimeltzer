@@ -70,8 +70,6 @@ function fillMyActivities(){
         tweetElement.querySelector(".retweet_counter").textContent = tweetData.numRetweets;
         tweetElement.querySelector(".like_counter").textContent = tweetData.numLikes;
 
-
-
         myTweets.appendChild(tweetElement);
     });
    
