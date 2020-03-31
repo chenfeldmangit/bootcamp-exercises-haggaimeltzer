@@ -181,8 +181,7 @@
                 <template id="tweet-template">
                     <div class="feed-item">
                         <div>
-                            <img class="feed-profile-img"
-                                src="https://pbs.twimg.com/profile_images/475721381443670016/-Usuvy6t_normal.jpeg">
+                            <img class="feed-profile-img">
                         </div>
                         <div class="tweet-item">
                             <div class="tweet-title tweet-inner-item">
@@ -212,7 +211,7 @@
                                 </div>
                                 <div class="tweet-action">
                                     <div class="tweet-action-icon-container">
-                                        <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
+                                        <img class="svg tweet-action-icon like_icon" src="./assets/like_icon.svg" onclick="onlike(this)" />
                                     </div>
                                     <div class="tweet-action-counter like_counter"> 0</div>
                                 </div>
@@ -260,8 +259,8 @@
                                 <div class="tweet-action-counter"> 5</div>
                             </div>
                             <div class="tweet-action">
-                                <div class="tweet-action-icon-container">
-                                    <img class="svg tweet-action-icon" src="./assets/like_icon.svg" />
+                                <div class="tweet-action-icon-container" onclick="onlike(this)">
+                                    <img class="svg tweet-action-icon" src="./assets/like_icon.svg" onclick="onlike(this)"/>
                                 </div>
                                 <div class="tweet-action-counter"> 5</div>
                             </div>

@@ -69,6 +69,7 @@ function fillMyActivities(){
         tweetElement.querySelector(".comment_counter").textContent = tweetData.numComments;
         tweetElement.querySelector(".retweet_counter").textContent = tweetData.numRetweets;
         tweetElement.querySelector(".like_counter").textContent = tweetData.numLikes;
+        //tweetElement.querySelector(".like_icon").onclick = function(element) {onlike(this, );};
 
         myTweets.appendChild(tweetElement);
     });
